@@ -6,16 +6,15 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Recordings from './pages/Recordings'
 import Favorites from './pages/Favorites'
+import NavBar from './components/NavBar'
 
 
 function App() {
   return (
     
     <Router>
-      <nav>
       
-     </nav>
-
+      <NavBar/>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/signup' element={<Signup />} />

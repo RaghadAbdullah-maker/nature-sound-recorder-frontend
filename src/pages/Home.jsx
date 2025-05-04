@@ -2,8 +2,18 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+
+
+  
+    <h1>Welcome to Nature Sound Recorder 🎧🌿</h1>
+  
+  
+  
+  </div> 
+  
+
+)
 }
 
 export default Home
