@@ -54,7 +54,31 @@ function Login() {
       <h3>Hi Again 😊 </h3>
 
 
-  
+      <form onSubmit={handleSubmit}>
+       
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit">Login</button>
+
+        {error && <p>{error}</p>}
+
+      </form>
     </div>
   )
 }
