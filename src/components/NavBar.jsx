@@ -20,11 +20,38 @@ function NavBar() {
 
     const isLoggedIn = Boolean(localStorage.getItem('access_token'))
 
+    const generallinks = (
+     <>
+         <Link to = "/login">Login</Link>{' '}
+         <Link to = "/signup">Signup</Link>
+     </>
+
+    )
+
+
+    const authlinks = (
+        <>
+            <button onClick={handleLogout}>Logout</button>
+        </>
+    )
+
 
     return (
 
         <>
-            
+            <nav>
+                
+                <Link to="/" >Home</Link>{' '}
+                { isLoggedIn ? 
+                authlinks
+                :
+                generallinks
+                }
+
+
+
+
+            </nav>
         
         
         
