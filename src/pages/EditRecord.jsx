@@ -82,7 +82,75 @@ import { authorizedRequest } from '../lib/api'
         <div>
             <h2>Edit your Recording</h2>
 
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
+
+
+        <label>
+            Title:
+                <input 
+                    
+                    type="text" 
+                    name="title"
+                    placeholder="title"
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
+                    required
+                    
+                    />
+        </label>
+        <hr />
+
+      
+        <label>
+            Description:       
+                <input   
+                type="text" 
+                name="description"
+                placeholder="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+                required
+                
+                />
+        </label>
+        <hr />
+
+        <label>
+                Category: 
+                    <select value={selectedCategory} onChange={(event) => setSelectedCategory(event.target.value)}>
+                        <option value="">Select a Category</option>
+                        {categories.map(category => (
+                            <option key={category.id} value={category.id}>{category.name}</option>
+                             ))}
+                    </select>
+        </label>
+      
+      <label>
+      Audio File:: 
+             
+             
+              <input 
+             
+             type="file" 
+             accept='audio/*'             
+             onChange={(event) => setAudiofile(event.target.files[0])}
+             required
+               
+             />
+             
+              
+      </label>
+      <hr />
+
+        
            
+
+             
+            <button type="submit">Edit</button>
+
+
+        </form>
+        
           
         </div>
     )
