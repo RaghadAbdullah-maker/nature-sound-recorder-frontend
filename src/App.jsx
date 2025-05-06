@@ -4,9 +4,10 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Recordings from './pages/Recordings'
+import RecordingsDetails from './pages/RecordingsDetails'
 import Favorites from './pages/Favorites'
 import NavBar from './components/NavBar'
+import AddRecord from './pages/AddRecord'
 
 
 function App() {
@@ -15,13 +16,14 @@ function App() {
     <Router>
       
       <NavBar/>
-      
+
       <Routes>
 
       <Route path='/' element={<Home />}/>
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/recordings/:id' element={<Recordings />} />
+        {/* <Route path='/recordings/add' element={<AddRecord />} />
+        <Route path='/recordings/:id' element={<RecordingsDetails />} /> */}
         <Route path='/Favorites' element={<Favorites />} />
         
       </Routes>

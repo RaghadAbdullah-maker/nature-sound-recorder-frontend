@@ -37,12 +37,15 @@ async function authorizedRequest(method, url, data = null) {
         headers: {}
     }
 
-    if (data)  config.data = data
+    if (data){config.data = data}  
     
 
     let accessToken = localStorage.getItem('access_token')
     if (accessToken) {
         config.headers['Authorization'] = `Bearer ${accessToken}`
+        if (!(data instanceof FormData)) {
+            config.headers['Content-Type'] = 'application/json'
+          }
     }
 
     try {
@@ -50,7 +53,7 @@ async function authorizedRequest(method, url, data = null) {
         return response
     } catch (err) {
         console.log(err)
-        //401 : unauthorized
+        //401 :unauthorized
         if (err.response && err.response.status == 401) {
             try {
                 accessToken = await refreshAccessToken()

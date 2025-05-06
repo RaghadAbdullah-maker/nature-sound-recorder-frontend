@@ -13,7 +13,6 @@ function Login() {
   })
 
   const [error, setError] = useState('')
-
   const navigate = useNavigate()
 
 
@@ -29,23 +28,34 @@ function Login() {
 
 
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    setError('')
 
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}token/`, formData)
-      setTokens({
-        access: response.data.access,
-        refresh: response.data.refresh
-      })
-      navigate('/')
 
-    } catch (err) {
-      console.log(err)
-      setError('Invalid username or password')
-    }
-  }
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        setError('')
+    
+        try {
+          const response = await axios.post(`${import.meta.env.VITE_BASE_URL}token/`, formData)
+          console.log("Response:", response.data);
+          
+          setTokens({
+            access: response.data.access,
+            refresh: response.data.refresh
+          })
+
+          const accessToken = response.data.access
+          const payload = JSON.parse(atob(accessToken.split('.')[1]))
+          const userId = payload.user_id;
+      
+          localStorage.setItem('user_id', userId)
+          console.log('Saved user_id:', userId)
+      
+          navigate('/')
+        } catch (err) {
+          console.log(err)
+          setError('Invalid username or password')
+        }
+      }
 
 
   return (
@@ -55,7 +65,6 @@ function Login() {
 
 
       <form onSubmit={handleSubmit}>
-       
         <input
           type="text"
           name="username"
@@ -64,7 +73,6 @@ function Login() {
           onChange={handleChange}
           required
         />
-
         <input
           type="password"
           name="password"
@@ -73,11 +81,8 @@ function Login() {
           onChange={handleChange}
           required
         />
-
         <button type="submit">Login</button>
-
         {error && <p>{error}</p>}
-
       </form>
     </div>
   )
