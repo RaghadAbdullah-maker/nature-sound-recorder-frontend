@@ -1,22 +1,19 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-
 import axios from 'axios'
-
-
-
 
 function RecordingsDetails() {
 
  
     const { id } = useParams()
     const navigate = useNavigate()
-    const [recording, setRecording] = useState([])
+    const [recording, setRecording] = useState(null)
     const [errorMsg, setErrorMsg] = useState('')
     const [category, setCategory] = useState(null)
 
 
+    
     async function getCategoryName(categoryId) {
 
       try {
@@ -65,17 +62,42 @@ function RecordingsDetails() {
         console.log(id)
         }, [id])
 
-    useEffect(() => {
-      
-      if (recording.category) {
-          getCategoryName(recording.category)
-      }
+        useEffect(() => {
+          if (recording && recording.category) {
+              getCategoryName(recording.category)
+          }
       }, [recording])
-
-
-   
+      
+  async function deleteRecording() {
+    const confirmDelete = window.confirm("Are you sure you want to delete this recording ?");
+    if (!confirmDelete) return
+    try {
+      const token = localStorage.getItem('access_token')
   
-    return ( 
+      const response = await axios.delete( `${import.meta.env.VITE_BASE_URL}recordings/${id}/`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+  
+      if (response.status === 204) {
+        navigate('/')
+      }
+    } catch (err) {
+      console.error("Delete error", err);
+      alert("You don't have permission to delete this recording")
+    }
+  }
+  if (!recording) {
+    return <p>Loading...</p>
+}
+
+
+const userId = localStorage.getItem('user_id')
+
+return ( 
         <>
 
           <div>
@@ -90,9 +112,14 @@ function RecordingsDetails() {
                      minute: '2-digit'
                    })}</p>
               <audio controls src={`${import.meta.env.VITE_BASE_URL_back}${recording.audio_file}`}></audio>
-        
-
+           
           </div>
+              
+             {recording.user.toString() === userId && (
+                        <button onClick={deleteRecording}>Delete</button>
+                    )}         
+              <Link to={`/recordings/${id}/edit`}>Edit this Recording</Link>
+
         </>
     )
 

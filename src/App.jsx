@@ -8,6 +8,7 @@ import RecordingsDetails from './pages/RecordingsDetails'
 import Favorites from './pages/Favorites'
 import NavBar from './components/NavBar'
 import AddRecord from './pages/AddRecord'
+import EditRecord from './pages/EditRecord'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/recordings/add' element={<AddRecord />} />
+        <Route path='/recordings/:id/edit' element={<EditRecord />} />        
         <Route path='/recordings/:id' element={<RecordingsDetails />} />
         <Route path='/Favorites' element={<Favorites />} />
         
