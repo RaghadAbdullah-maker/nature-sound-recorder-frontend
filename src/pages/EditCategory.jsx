@@ -46,7 +46,16 @@ function EditCategory() {
   return (
 
     <div>
-     
+      <h2>Edit </h2>
+      <form onSubmit={handleUpdate}>
+        <input
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder="Category Name"
+        />
+        <button type="submit">update</button>
+      </form>
     </div>
   )
 }
