@@ -48,7 +48,26 @@ function CategoryDetails() {
 
   return (
     <div>
-        
+        {category === null ? (
+              <p>Loading category...</p>
+            )  : (
+              <>
+                <h2>{category.name}</h2>
+                <p>{new Date(category.created_at).toLocaleString('en-GB', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit'
+                })}</p>
+                <div>
+                  <Link to={`/categories/${id}/edit`}>
+                    <button>Edit Category</button>
+                  </Link>
+                  <button onClick={handleDelete}>Delete Category</button>
+                </div>
+              </>
+    )}
     </div>
   )
 }
