@@ -30,7 +30,19 @@ function CategoriesList() {
     <div>
       <h2>Categories</h2>
 
-    
+      <ul>
+
+        {categories.map(category => (
+          <li key={category.id}>
+            <Link to={`/categories/${category.id}`}>{category.name}</Link>
+          </li>
+        ))}
+      </ul>
+
+      <Link to="/categories/create">
+        <button>Create New Category</button>
+      </Link>
+      
     </div>
   )
 }
