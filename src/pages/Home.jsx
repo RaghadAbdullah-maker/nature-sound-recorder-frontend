@@ -35,12 +35,11 @@ function Home() {
 
 
   return (
-    <div>
+    <section className="hero is-fullheight is-light">
+     <div className="container has-text-centered">
 
-
-  
-    <h1> Welcome to Nature Sound Recorder 🎧🌿</h1>
-    <h2>All Recordings:</h2>
+    <h1  className="title is-1 has-text-primary"> Welcome to Nature Sound Recorder 🎧🌿</h1>
+    <h2 class="subtitle is-2" >All Recordings:</h2>
 
     { recordings.length === 0 ? (
         <p>No recordings found </p>
@@ -50,8 +49,8 @@ function Home() {
                     return (
 
                         <div key={recording.id}>
-                            <h3>{recording.title}</h3>
-                            <p>{recording.description}</p>
+                            <h3 class="subtitle is-3">{recording.title}</h3>
+                            <p class="subtitle is-5">{recording.description}</p>
                             <Link to={`recordings/${recording.id}`}>View Details</Link>
                         </div>
                     )
@@ -61,7 +60,8 @@ function Home() {
   
   
   </div> 
-  
+  </section>
+   
 
 )
 }

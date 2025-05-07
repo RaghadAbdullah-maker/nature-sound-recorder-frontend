@@ -22,7 +22,7 @@ function NavBar() {
 
     const generallinks = (
      <>
-         <Link to = "/login">Login</Link>{' '}
+         <Link to = "/login">Login</Link>{'  '}
          <Link to = "/signup">Signup</Link>
      </>
 
@@ -31,6 +31,8 @@ function NavBar() {
 
     const authlinks = (
         <>
+            <Link to="categories/" >Categories</Link>{'  '}
+
             <button onClick={handleLogout}>Logout</button>
         </>
     )
@@ -41,7 +43,8 @@ function NavBar() {
         <>
             <nav>
                 
-                <Link to="/" >Home</Link>{' '}
+                <Link to="/" >Home</Link>{'  '}
+               
                 { isLoggedIn ? 
                 authlinks
                 :
