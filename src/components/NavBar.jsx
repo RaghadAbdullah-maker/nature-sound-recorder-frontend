@@ -28,6 +28,7 @@ function NavBar() {
 
     )
 
+    
 
     const authlinks = (
         <>
