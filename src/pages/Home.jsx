@@ -53,6 +53,7 @@ function Home() {
                             <p class="subtitle is-5">{recording.description}</p>
                             <Link to={`recordings/${recording.id}`}>View Details</Link>
                         </div>
+                        
                     )
                 })}
             </div>

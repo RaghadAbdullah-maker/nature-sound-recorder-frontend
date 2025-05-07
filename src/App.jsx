@@ -24,6 +24,7 @@ function App() {
 
       <Routes>
 
+
       <Route path='/' element={<Home />}/>
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
@@ -36,6 +37,7 @@ function App() {
         <Route path="/categories/:id/edit" element={<EditCategory />} />
         <Route path='/Favorites' element={<Favorites />} />
         
+
       </Routes>
     </Router>
 
