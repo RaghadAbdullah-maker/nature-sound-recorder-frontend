@@ -1,13 +1,101 @@
-# React + Vite
+# Nature Sound Recorder - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** repository for the Nature Sound Recorder project. The application allows users to record and upload natural sounds, view and manage recordings, and explore contributions by other users.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
 
-## Expanding the ESLint configuration
+The Nature Sound Recorder frontend provides a user-friendly interface for users to interact with audio recordings of natural environments. It enables users to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# nature-sound-recorder-frontend
+* Sign up and log in
+* Upload and edit audio recordings
+* View a list of all recordings
+* View details of a selected recording
+* Filter by category
+* Mark favorites
+
+---
+
+## Repository Link
+
+**Backend Repository:** [Nature Sound Recorder - Backend](https://github.com/your-username/nature-sound-recorder-backend)
+
+---
+
+## Tech Stack
+
+* **React** (Frontend Framework)
+* **Vite** (Development server & build tool)
+* **React Router** (Routing)
+* **Axios** (API calls)
+* **Bulma CSS** (Styling)
+* **JWT Authentication** (Token-based auth)
+* **Local Storage** (Store user info)
+
+---
+
+## Installation Instructions
+
+### 1. Clone the Repository
+
+git clone https://github.com/your-username/nature-sound-recorder-frontend.git
+cd nature-sound-recorder-frontend
+
+### 2. Install Dependencies
+
+npm install
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file
+
+
+### 4. Run the App
+
+npm run dev
+
+
+---
+
+## Screenshots
+![Signup](<sign up.png>)
+![Home page](<Home (5).png>)
+![Details page](detail.png)
+* Home page
+* Upload page
+* Details page
+* Edit page
+* Login/Signup
+
+
+---
+
+## IceBox Features
+
+* Audio playback waveform visualization
+* Like/Comment system for each recording
+* Dark mode support
+* Advanced search and filtering
+* User profiles with avatars
+
+---
+
+
+## Wireframe
+(wireframe.png)
+
+## How to Use the App
+
+1. Run the backend server (see backend README)
+2. Start the frontend with `npm run dev`
+3. Sign up for an account
+4. Upload a natural sound recording
+5. Browse, edit or delete your own recordings
+6. Explore recordings from other users
+
+---
+
+## Developed By
+
+**Raghad AlHazmi**

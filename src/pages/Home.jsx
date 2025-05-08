@@ -35,24 +35,28 @@ function Home() {
 
 
   return (
-    <section className="hero is-fullheight is-light">
+    <section className="section">
      <div className="container has-text-centered">
 
     <h1  className="title is-1 has-text-primary"> Welcome to Nature Sound Recorder 🎧🌿</h1>
-    <h2 class="subtitle is-2" >All Recordings:</h2>
+    <h2 className=" " class =" subtitle is-4 mb-6 mt-5  has-text-weight-bold">All Recordings:</h2>
 
     { recordings.length === 0 ? (
-        <p>No recordings found </p>
+        <p   className="has-text-grey" >No recordings found </p>
       ) : (
-            <div>
+            <div className="columns is-multiline is-centered">
                 {recordings.map(recording => {
                     return (
 
-                        <div key={recording.id}>
-                            <h3 class="subtitle is-3">{recording.title}</h3>
-                            <p class="subtitle is-5">{recording.description}</p>
-                            <Link to={`recordings/${recording.id}`}>View Details</Link>
-                        </div>
+                        <div  className="column is-4" key={recording.id}>
+                            <div className="card">
+                            <div className="card-content">
+                            <h3 className="title is-5 has-text-link">{recording.title}</h3>
+                            <p className="subtitle is-6">{recording.description}</p>
+                            <Link to={`recordings/${recording.id}`} className="button is-info is-light mt-3">View Details</Link>
+                            </div>
+                            </div>
+                            </div>
                         
                     )
                 })}

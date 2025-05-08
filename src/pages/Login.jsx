@@ -59,12 +59,17 @@ function Login() {
 
 
   return (
-    <div>
-      <h1>Login</h1>
-      <h3>Hi Again 😊 </h3>
+<section className="hero is-fullheight is-light">
+      <div className="hero-body">
+        <div className="container has-text-centered">
+          <div className="box" style={{ maxWidth: '400px', margin: 'auto' }}> 
+                 <h1 className="title is-3 has-text-primary">Login</h1>
+      <h3 className="subtitle is-5">Hi Again 😊 </h3>
 
 
       <form onSubmit={handleSubmit}>
+      <div className="field 1">
+      <div className="control 1">
         <input
           type="text"
           name="username"
@@ -73,7 +78,11 @@ function Login() {
           onChange={handleChange}
           required
         />
-        <input
+          </div>
+          </div>
+          <div className="field 2">
+          <div className="control 2">
+           <input
           type="password"
           name="password"
           placeholder="Password"
@@ -81,10 +90,15 @@ function Login() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Login</button>
-        {error && <p>{error}</p>}
+           </div>
+           </div>
+        <button  className="button is-primary is-fullwidth" type="submit" >Login</button>
       </form>
-    </div>
+      </div>
+        </div>
+      </div>
+    </section>
+    
   )
 }
 

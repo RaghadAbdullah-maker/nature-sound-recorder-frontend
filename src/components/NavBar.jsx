@@ -22,19 +22,18 @@ function NavBar() {
 
     const generallinks = (
      <>
-         <Link to = "/login">Login</Link>{'  '}
-         <Link to = "/signup">Signup</Link>
+         <Link to = "/login"  className="button is-link is-light">Login</Link>{'  '}
+         <Link to = "/signup" className="button is-link is-light">Signup</Link>
      </>
 
     )
 
-    
+
 
     const authlinks = (
         <>
-            <Link to="categories/" >Categories</Link>{'  '}
-
-            <button onClick={handleLogout}>Logout</button>
+            <Link className="button is-link is-light" to="categories/" >Categories</Link>{'  '}
+            <button  className="button is-danger is-light"onClick={handleLogout}>Logout</button>
         </>
     )
 
@@ -42,17 +41,21 @@ function NavBar() {
     return (
 
         <>
-            <nav>
-                
-                <Link to="/" >Home</Link>{'  '}
-               
+            <nav  className="navbar is-primary">
+            <div className="navbar-brand">
+                <Link className="navbar-item has-text-white"to="/" >Home</Link>{'  '}
+                </div>
+
+                <div className="navbar-menu is-active">
+                <div className="navbar-end has-text-centered is-fullwidth">               
                 { isLoggedIn ? 
                 authlinks
                 :
                 generallinks
                 }
-
-
+                             
+                             </div>
+                             </div>
 
 
             </nav>

@@ -3,72 +3,79 @@ import axios from 'axios'
 import { setTokens } from '../lib/api'
 
 function Signup() {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
 
-
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
-
-
-
-    async function handleSubmit(event){
-       
-        event.preventDefault()
-        try {
-            const response = await axios.post(
-                'http://127.0.0.1:8000/api/signup/',
-                {username, email, password}
-            )
-            console.log(response.data)
-            setTokens(response.data)
-        } catch (err) {
-            console.log(err)
-        }
+  async function handleSubmit(event) {
+    event.preventDefault()
+    try {
+      const response = await axios.post(
+        'http://127.0.0.1:8000/api/signup/',
+        { username, email, password }
+      )
+      console.log(response.data)
+      setTokens(response.data)
+    } catch (err) {
+      console.log(err)
     }
+  }
 
+  return (
+    <section className="section is-flex is-justify-content-center is-align-items-center is-fullheight">
+      <div className="box" style={{ width: '100%', maxWidth: '500px' }}>
+        <h1 className="title has-text-centered has-text-primary">Sign Up</h1>
+        <h2 className="subtitle has-text-centered">To Nature Sound Recorder 🎧</h2>
 
+        <form onSubmit={handleSubmit}>
+          <div className="field">
+            <label className="label">Username</label>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                placeholder="Enter your username"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+              />
+            </div>
+          </div>
 
-    return (
-        
-            <>
-            <h1> Sign Up </h1>
-            <h3>To Nature Sound Record App 🎧</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input
-                        type='text'
-                        placeholder='Username'
-                        name='username'
-                        onChange={event => setUsername(event.target.value)}
-                        value={username}
-                    />
-                </div>
+          <div className="field">
+            <label className="label">Email</label>
+            <div className="control">
+              <input
+                className="input"
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+          </div>
 
-                <div>
-                    <input
-                        type='password'
-                        placeholder='password'
-                        name='password'
-                        onChange={event => setPassword(event.target.value)}
-                        value={password}
-                    />
-                </div>
+          <div className="field">
+            <label className="label">Password</label>
+            <div className="control">
+              <input
+                className="input"
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+          </div>
 
-                <div>
-                    <input
-                        type='text'
-                        placeholder='email'
-                        name='email'
-                        onChange={event => setEmail(event.target.value)}
-                        value={email}
-                    />
-                </div>
-
-                <button type='submit'>Sign Up!</button>
-           
-            </form>
-       </>
-    )
+          <div className="field is-grouped is-grouped-centered mt-4">
+            <div className="control">
+              <button className="button is-primary" type="submit">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  )
 }
 
 export default Signup

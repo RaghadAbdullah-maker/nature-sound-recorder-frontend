@@ -100,26 +100,31 @@ const userId = localStorage.getItem('user_id')
 return ( 
         <>
 
-          <div>
-              <h2>{recording.title}</h2>
-              <p>{recording.description}</p>
-              <p>Category: {category}</p>
-              <p>{new Date(recording.created_at) .toLocaleString('en-GB', {  
+          <div className="container has-text-centered">
+              <h2 className="title is-2">{recording.title}</h2>
+              <p className="subtitle is-4">{recording.description}</p>
+              <p  className="is-size-5">Category: {category}</p>
+              <p className="is-size-6">{new Date(recording.created_at) .toLocaleString('en-GB', {  
                      day: '2-digit',
                      month: '2-digit',
                      year: 'numeric',
                      hour: '2-digit',
                      minute: '2-digit'
                    })}</p>
-              <audio controls src={`${import.meta.env.VITE_BASE_URL_back}${recording.audio_file}`}></audio>
-           
-          </div>
-              
-             {recording.user.toString() === userId && (
-                        <button onClick={deleteRecording}>Delete</button>
-                    )}         
-              <Link to={`/recordings/${id}/edit`}>Edit this Recording</Link>
+                                   <div className="audio-container">
 
+              <audio controls src={`${import.meta.env.VITE_BASE_URL_back}${recording.audio_file}`}></audio>
+              </div>
+
+          </div>
+          <br />
+          <div className="buttons is-centered">
+             {recording.user.toString() === userId && (
+                        <button  className="button is-danger is-light" onClick={deleteRecording}>Delete</button>
+                    )}         
+              <Link className="button is-link is-light" to={`/recordings/${id}/edit`}>Edit this Recording</Link>
+              </div>
+              
         </>
     )
 
