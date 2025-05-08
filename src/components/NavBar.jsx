@@ -33,6 +33,7 @@ function NavBar() {
     const authlinks = (
         <>
             <Link className="button is-link is-light" to="categories/" >Categories</Link>{'  '}
+            <Link className="button is-link is-light" to="recordings/add/" >Add Recording</Link>{'  '}
             <button  className="button is-danger is-light"onClick={handleLogout}>Logout</button>
         </>
     )

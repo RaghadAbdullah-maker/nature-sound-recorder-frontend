@@ -8,7 +8,6 @@ function CreateCategory() {
   const [errorMsg, setErrorMsg] = useState('')
   const navigate = useNavigate()
 
-
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -19,28 +18,40 @@ function CreateCategory() {
         { headers: { Authorization: `Bearer ${token}` } }
       )
       navigate('/categories')
-
     } catch (error) {
       setErrorMsg('Failed to create category')
     }
   }
 
   return (
+    <div className="container mt-6">
+      <div className="box">
+        <h2 className="title is-4">Create New Category</h2>
+        
+        <form onSubmit={handleSubmit}>
+          <div className="field">
+            <label className="label">Category Name</label>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Category Name"
+                required
+              />
+            </div>
+          </div>
 
+          {errorMsg && <p className="notification is-danger">{errorMsg}</p>}
 
-    <div>
-      <h2> Create New Category </h2>
-      <form onSubmit={handleSubmit}>
-
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder="Category Name"
-        />
-
-        <button type="submit">Create</button>
-      </form>
+          <div className="field">
+            <div className="control">
+              <button type="submit" className="button is-primary">Create</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

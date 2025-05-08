@@ -12,7 +12,6 @@ function CategoryDetails() {
     async function getCategory() {
       try {
         const token = localStorage.getItem('access_token')
-        console.log(localStorage.getItem('access_token'))
         const response = await axios.get(
           `${import.meta.env.VITE_BASE_URL}categories/${id}/`,
           {
@@ -31,13 +30,11 @@ function CategoryDetails() {
   
   const handleDelete = async () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this category?')
-    if (!confirmDelete)  return
+    if (!confirmDelete) return
     try {
       const token = localStorage.getItem('access_token')
       await axios.delete(`${import.meta.env.VITE_BASE_URL}categories/${id}/`,
-        { headers:
-           { Authorization: `Bearer ${token}` }
-         }
+        { headers: { Authorization: `Bearer ${token}` } }
       )
       navigate('/categories')
     } catch (error) {
@@ -45,29 +42,35 @@ function CategoryDetails() {
     }
   }
 
-
   return (
-    <div>
-        {category === null ? (
-              <p>Loading category...</p>
-            )  : (
-              <>
-                <h2>{category.name}</h2>
-                <p>{new Date(category.created_at).toLocaleString('en-GB', {
-                  day: '2-digit',
-                  month: '2-digit',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}</p>
-                <div>
-                  <Link to={`/categories/${id}/edit`}>
-                    <button>Edit Category</button>
-                  </Link>
-                  <button onClick={handleDelete}>Delete Category</button>
-                </div>
-              </>
-    )}
+    <div className="container mt-6">
+      {category === null ? (
+        <p className="has-text-grey">Loading category...</p>
+      ) : (
+        <>
+          <div className="box">
+            <h2 className="title is-4">{category.name}</h2>
+            <p className="has-text-grey-dark mb-4">
+              {new Date(category.created_at).toLocaleString('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })}
+            </p>
+            <div className="buttons">
+              <Link to={`/categories/${id}/edit`}>
+                <button className="button is-info">Edit Category</button>
+              </Link>
+              <button onClick={handleDelete} className="button is-danger">
+                Delete Category
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+      {errorMsg && <p className="notification is-danger mt-4">{errorMsg}</p>}
     </div>
   )
 }
