@@ -19,7 +19,7 @@ The Nature Sound Recorder frontend provides a user-friendly interface for users 
 
 ## Repository Link
 
-**Backend Repository:** [Nature Sound Recorder - Backend](https://github.com/your-username/nature-sound-recorder-backend)
+**Backend Repository:** [Nature Sound Recorder - Backend](https://git.generalassemb.ly/raghadabdullah-maker/nature-sound-recorder-backend.git)
 
 ---
 
