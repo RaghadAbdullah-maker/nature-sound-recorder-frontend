@@ -59,14 +59,12 @@ npm run dev
 ---
 
 ## Screenshots
-![Signup](<sign up.png>)
-![Home page](<Home (5).png>)
-![Details page](detail.png)
-* Home page
-* Upload page
-* Details page
-* Edit page
-* Login/Signup
+![Home](2.png)
+![Add](add.png)
+![Details](3.png)
+![Edit](Edit.png)
+![login](login.png)
+![sign up](signup.png)
 
 
 ---
@@ -75,6 +73,7 @@ npm run dev
 
 * Audio playback waveform visualization
 * Like/Comment system for each recording
+
 * Dark mode support
 * Advanced search and filtering
 * User profiles with avatars
@@ -82,8 +81,6 @@ npm run dev
 ---
 
 
-## Wireframe
-(wireframe.png)
 
 ## How to Use the App
 
