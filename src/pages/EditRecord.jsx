@@ -69,9 +69,9 @@ function EditRecord() {
   }
 
   return (
-    <div className="container mt-6">
-      <div className="box">
-        <h2 className="title is-4">Edit Your Recording</h2>
+    <div className="container mt-6 edit-recording-container">
+    <div className="box edit-recording-box">
+      <h2 className="title is-3 has-text-centered has-text-link mb-5">Edit Your Recording</h2>
 
         <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="field">
@@ -135,7 +135,7 @@ function EditRecord() {
 
           <div className="field">
             <div className="control">
-              <button type="submit" className="button is-primary">Edit</button>
+              <button type="submit" className="button3">Edit</button>
             </div>
           </div>
         </form>

@@ -20,28 +20,35 @@ function CategoriesList() {
   }, [])
 
   return (
-    <div className="container mt-6">
-      <h2 className="title is-4">Categories</h2>
-
-      {errorMsg && (
-        <div className="notification is-danger is-light">{errorMsg}</div>
-      )}
-
-      <ul className="menu-list box">
-        {categories.map(category => (
-          <li key={category.id}>
-            <Link className="has-text-link" to={`/categories/${category.id}`}>
-              {category.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <Link to="/categories/create">
-        <button className="button is-primary mt-4">Create New Category</button>
-      </Link>
+    <div className="page categories-page">
+      <h2 className="title is-3 has-text-centered mb-5">CATEGORIES</h2>
+  
+      <div className="container box-container">
+        {errorMsg && (
+          <div className="notification is-danger is-light has-text-centered">
+            {errorMsg}
+          </div>
+        )}
+  
+        <ul className="categories-list">
+          {categories.map(category => (
+            <li key={category.id} className="category-item">
+              <Link className="category-link" to={`/categories/${category.id}`}>
+                {category.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+  
+        <div className="has-text-centered mt-5">
+          <Link to="/categories/create">
+            <button className="button2">Create New Category</button>
+          </Link>
+        </div>
+      </div>
     </div>
   )
+  
 }
 
 export default CategoriesList

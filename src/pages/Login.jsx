@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { setTokens } from '../lib/api'
@@ -59,45 +60,42 @@ function Login() {
 
 
   return (
-<section className="hero is-fullheight is-light">
-      <div className="hero-body">
-        <div className="container has-text-centered">
-          <div className="box" style={{ maxWidth: '400px', margin: 'auto' }}> 
-                 <h1 className="title is-3 has-text-primary">Login</h1>
-      <h3 className="subtitle is-5">Hi Again 😊 </h3>
+      <div className="login-page">
+        <div className="backgraound">
 
-
-      <form onSubmit={handleSubmit}>
-      <div className="field 1">
-      <div className="control 1">
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleChange}
-          required
-        />
-          </div>
-          </div>
-          <div className="field 2">
-          <div className="control 2">
-           <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-           </div>
-           </div>
-        <button  className="button is-primary is-fullwidth" type="submit" >Login</button>
-      </form>
+       
+                  <div className='box'> 
+                    <h1>Welcome </h1>
+                   <h2 >Login</h2>
+                  <form onSubmit={handleSubmit}>
+                                <div className="field-1">
+                                <label className="field-11">User Name </label>
+                                  <input
+                                    type="text"
+                                    name="username"
+                                    placeholder="Username"
+                                    value={formData.username}
+                                    onChange={handleChange}
+                                    required
+                                  />
+                                    </div>
+                                    
+                                  <div className="field-2">
+                                  <label className="field-22" >Password</label>                                    <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
+                                  />
+                                    </div>
+                                  <button  className="button" type="submit" >Login</button>
+                    </form>
+                   </div>
+               
       </div>
         </div>
-      </div>
-    </section>
     
   )
 }

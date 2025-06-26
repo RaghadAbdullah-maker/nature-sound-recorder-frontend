@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { setTokens } from '../lib/api'
@@ -22,10 +23,12 @@ function Signup() {
   }
 
   return (
-    <section className="section is-flex is-justify-content-center is-align-items-center is-fullheight">
-      <div className="box" style={{ width: '100%', maxWidth: '500px' }}>
-        <h1 className="title has-text-centered has-text-primary">Sign Up</h1>
-        <h2 className="subtitle has-text-centered">To Nature Sound Recorder 🎧</h2>
+
+   <div className="login-page">
+    <div className="backgraound">
+      <div className="box" >
+        <h1 className="title">Sign Up</h1>
+        <h2 className="subtitle">To Nature Sound Recorder</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="field">
@@ -69,13 +72,14 @@ function Signup() {
 
           <div className="field is-grouped is-grouped-centered mt-4">
             <div className="control">
-              <button className="button is-primary" type="submit">Sign Up</button>
+              <button className="button" type="submit">Sign Up</button>
             </div>
           </div>
         </form>
-      </div>
-    </section>
-  )
+        </div>
+        </div>
+        </div>
+    )
 }
 
 export default Signup

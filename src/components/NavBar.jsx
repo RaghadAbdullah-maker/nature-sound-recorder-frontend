@@ -22,8 +22,8 @@ function NavBar() {
 
     const generallinks = (
      <>
-         <Link to = "/login"  className="button is-link is-light">Login</Link>{'  '}
-         <Link to = "/signup" className="button is-link is-light">Signup</Link>
+          <Link to="/login" className="icon"><span>Login</span></Link>{'   '}
+          <Link to="/signup" className="icon"><span>Signup</span></Link>
      </>
 
     )
@@ -32,47 +32,36 @@ function NavBar() {
 
     const authlinks = (
         <>
-            <Link className="button is-link is-light" to="categories/" >Categories</Link>{'  '}
-            <Link className="button is-link is-light" to="recordings/add/" >Add Recording</Link>{'  '}
-            <button  className="button is-danger is-light"onClick={handleLogout}>Logout</button>
+           <Link to="/categories/" ><span>Categories</span></Link>{'       '}
+            <Link to="/recordings" ><span>All Recording</span></Link>{'   '}
+            <button onClick={handleLogout} className="logout-button"><span>Logout</span></button>
         </>
     )
 
 
     return (
+            <nav className="navbar-container">
+                    <div className="left-section">
+                        <h3  className="logo" >𝖭𝖠𝖳𝕌𝖱𝖤</h3>
+                    <div className="nav-links">
+                    <Link to="/">Home</Link>
+                        {isLoggedIn ? (
+                        <>
+                            <Link to="/categories/">Categories</Link>
+                            <Link to="/recordings">All Recording</Link>
+                        </>
+                        ) : generallinks}
+                    </div>
+                    </div>
 
-        <>
-            <nav  className="navbar is-primary">
-            <div className="navbar-brand">
-                <Link className="navbar-item has-text-white"to="/" >Home</Link>{'  '}
-                </div>
-
-                <div className="navbar-menu is-active">
-                <div className="navbar-end has-text-centered is-fullwidth">               
-                { isLoggedIn ? 
-                authlinks
-                :
-                generallinks
-                }
-                             
-                             </div>
-                             </div>
-
-
+                    {isLoggedIn && (
+                        <button onClick={handleLogout} className="logout-button">
+                        <span>Logout</span>
+                        </button>
+                    )}
             </nav>
-        
-        
-        
-        
-        </>
-            
-            
-
-
-
-
-
     )
 }
 
 export default NavBar
+
