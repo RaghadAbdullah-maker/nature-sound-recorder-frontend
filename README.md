@@ -73,7 +73,6 @@ npm run dev
 ![sign up](signup.png)
 ![Home](home.png)
 ![recording](recording.png)
-![category](categoris.png)
 
 ---
 
