@@ -1,5 +1,10 @@
 # Nature Sound Recorder - Frontend
 
+![React](https://img.shields.io/badge/React-18.2-blue)
+![Vite](https://img.shields.io/badge/Vite-frontend-yellow)
+![Bulma](https://img.shields.io/badge/CSS-Bulma-blue)
+![Auth](https://img.shields.io/badge/Auth-JWT-green)
+
 This is the **frontend** repository for the Nature Sound Recorder project. The application allows users to record and upload natural sounds, view and manage recordings, and explore contributions by other users.
 
 ---
@@ -19,7 +24,7 @@ The Nature Sound Recorder frontend provides a user-friendly interface for users 
 
 ## Repository Link
 
-**Backend Repository:** [Nature Sound Recorder - Backend](https://git.generalassemb.ly/raghadabdullah-maker/nature-sound-recorder-backend.git)
+**Backend Repository:** [Nature Sound Recorder - Backend](https://github.com/RaghadAbdullah-maker/nature-sound-recorder-backend.git)
 
 ---
 
@@ -39,13 +44,16 @@ The Nature Sound Recorder frontend provides a user-friendly interface for users 
 
 ### 1. Clone the Repository
 
+```bash
 git clone https://github.com/your-username/nature-sound-recorder-frontend.git
 cd nature-sound-recorder-frontend
+```
 
 ### 2. Install Dependencies
 
+```bash
 npm install
-
+```
 ### 3. Set Up Environment Variables
 
 Create a `.env` file
@@ -53,19 +61,19 @@ Create a `.env` file
 
 ### 4. Run the App
 
+```bash
 npm run dev
-
+```
 
 ---
 
 ## Screenshots
-![Home](2.png)
-![Add](add.png)
-![Details](3.png)
-![Edit](Edit.png)
+
 ![login](login.png)
 ![sign up](signup.png)
-
+![Home](home.png)
+![recording](recording.png)
+![category](categoris.png)
 
 ---
 
@@ -73,7 +81,6 @@ npm run dev
 
 * Audio playback waveform visualization
 * Like/Comment system for each recording
-
 * Dark mode support
 * Advanced search and filtering
 * User profiles with avatars
@@ -96,4 +103,3 @@ npm run dev
 ## Developed By
 
 **Raghad AlHazmi**
-# nature-sound-recorder-frontend
