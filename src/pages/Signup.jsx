@@ -19,7 +19,11 @@ function Signup() {
       console.log(response.data)
       setTokens(response.data)
     } catch (err) {
-      console.log(err)
+      if (err.response && err.response.data && err.response.data.error) {
+         alert(err.response.data.error);
+  }   else {
+         alert("Something went wrong. Please try again.");
+  }
     }
   }
 
