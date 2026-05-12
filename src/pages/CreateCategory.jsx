@@ -13,7 +13,7 @@ function CreateCategory() {
 
     try {
       const token = localStorage.getItem('access_token')
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}categories/`,
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/categories/`,
         { name },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -24,6 +24,8 @@ function CreateCategory() {
   }
 
   return (
+  <div className="page categoriess-page is-flex is-justify-content-center is-align-items-center">
+
     <div className="container mt-6">
       <div className="box">
         <h2 className="title is-4">Create New Category</h2>
@@ -52,6 +54,7 @@ function CreateCategory() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   )
 }

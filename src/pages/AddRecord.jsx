@@ -17,7 +17,7 @@ function AddRecord() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}categories/`)
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories/`)
         setCategories(response.data);
       } catch (err) {
         console.error("Failed to fetch categories", err);
@@ -56,90 +56,104 @@ function AddRecord() {
       setErorr('An error occurred.')
     }
   }
+return (
+  <section className="recordings-section" style={{ paddingTop: "90px" }}>
+    <div
+      style={{
+        minHeight: "calc(100vh - 90px)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "1rem",
+      }}
+    >
+      <div style={{ width: "100%", maxWidth: "650px" }}>
+        <div className="box">
+          <h1 className="title has-text-centered">Add Record</h1>
 
-  return (
-    <div className="container mt-6">
-      <h1 className="title has-text-centered">Add Record</h1>
+          {error && (
+            <div className="notification is-danger is-light">{error}</div>
+          )}
 
-      {error && (
-        <div className="notification is-danger is-light">{error}</div>
-      )}
-
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-
-        <label className="label">
-          Title:
-          <input 
-            className="input"
-            type="text" 
-            name="title"
-            placeholder="title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            required
-          />
-        </label>
-        <hr />
-
-        <label className="label">
-          Description:       
-          <input   
-            className="input"
-            type="text" 
-            name="description"
-            placeholder="description"
-            value={description}
-            onChange={(event) => setDescription(event.target.value)}
-            required
-          />
-        </label>
-        <hr />
-
-        <label className="label">
-          Category: 
-          <div className="select is-fullwidth">
-            <select 
-              value={selectedCategory} 
-              onChange={(event) => setSelectedCategory(event.target.value)}
-              required
-            >
-              <option value="">Select a Category</option>
-              {categories.map(category => (
-                <option key={category.id} value={category.id}>{category.name}</option>
-              ))}
-            </select>
-          </div>
-        </label>
-
-        <label className="label">
-          Audio File: 
-          <div className="file has-name is-fullwidth mt-2">
-            <label className="file-label">
-              <input 
-                className="file-input"
-                type="file" 
-                accept='audio/*'             
-                onChange={(event) => setAudiofile(event.target.files[0])}
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <label className="label">
+              Title:
+              <input
+                className="input"
+                type="text"
+                name="title"
+                placeholder="title"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
                 required
               />
-              <span className="file-cta">
-                <span className="file-label">Choose a file…</span>
-              </span>
-              <span className="file-name">
-                {audioFile ? audioFile.name : "No file selected"}
-              </span>
             </label>
-          </div>
-        </label>
-        <hr />
+            <hr />
 
-        <button type="submit" className="button is-primary is-fullwidth mt-4">
-          Upload
-        </button>
+            <label className="label">
+              Description:
+              <input
+                className="input"
+                type="text"
+                name="description"
+                placeholder="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+                required
+              />
+            </label>
+            <hr />
 
-      </form>
+            <label className="label">
+              Category:
+              <div className="select is-fullwidth">
+                <select
+                  value={selectedCategory}
+                  onChange={(event) => setSelectedCategory(event.target.value)}
+                  required
+                >
+                  <option value="">Select a Category</option>
+                  {categories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </label>
+
+            <label className="label">
+              Audio File:
+              <div className="file has-name is-fullwidth mt-2">
+                <label className="file-label">
+                  <input
+                    className="file-input"
+                    type="file"
+                    accept="audio/*"
+                    onChange={(event) => setAudiofile(event.target.files[0])}
+                    required
+                  />
+                  <span className="file-cta">
+                    <span className="file-label">Choose a file…</span>
+                  </span>
+                  <span className="file-name">
+                    {audioFile ? audioFile.name : "No file selected"}
+                  </span>
+                </label>
+              </div>
+            </label>
+            <hr />
+
+            <button type="submit" className="button is-primary is-fullwidth mt-4">
+              Upload
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-  )
+  </section>
+)
+
 }
 
 export default AddRecord

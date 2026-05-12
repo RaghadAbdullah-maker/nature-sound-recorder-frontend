@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { setTokens } from '../lib/api'
 import axios from 'axios'
 
@@ -36,7 +36,7 @@ function Login() {
         setError('')
     
         try {
-          const response = await axios.post(`${import.meta.env.VITE_BASE_URL}token/`, formData)
+const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/token/`, formData)
           console.log("Response:", response.data);
           
           setTokens({

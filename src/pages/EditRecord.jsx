@@ -56,7 +56,7 @@ function EditRecord() {
 
     try {
       const token = localStorage.getItem('access_token')
-      await axios.patch(`${import.meta.env.VITE_BASE_URL}recordings/${id}/`, formData, {
+      await axios.patch(`${import.meta.env.VITE_BASE_URL}/api/recordings/${id}/`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

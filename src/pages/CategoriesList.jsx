@@ -10,7 +10,7 @@ function CategoriesList() {
   useEffect(() => {
     async function getCategories() {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}categories/`);
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories/`);
         setCategories(response.data)
       } catch (error) {
         setErrorMsg('Failed to fetch categories')

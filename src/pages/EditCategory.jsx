@@ -12,7 +12,7 @@ function EditCategory() {
     async function getCategory() {
       try {
         const token = localStorage.getItem('access_token')
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}categories/${id}/`,
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories/${id}/`,
           {
             headers: { Authorization: `Bearer ${token}` }
           })

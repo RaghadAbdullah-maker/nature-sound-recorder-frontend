@@ -12,10 +12,11 @@ function Signup() {
   async function handleSubmit(event) {
     event.preventDefault()
     try {
-      const response = await axios.post(
-       `${import.meta.env.VITE_BASE_URL}signup/`,
-        { username, email, password }
-      )
+  const response = await axios.post(
+ `${import.meta.env.VITE_BASE_URL}/api/signup/`,
+  { username, email, password }
+)
+      
       console.log(response.data)
       setTokens(response.data)
     } catch (err) {
