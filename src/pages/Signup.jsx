@@ -13,7 +13,7 @@ function Signup() {
     event.preventDefault()
     try {
   const response = await axios.post(
- `${import.meta.env.VITE_BASE_URL}/api/signup/`,
+ `${import.meta.env.VITE_BASE_URL}signup/`,
   { username, email, password }
 )
       
