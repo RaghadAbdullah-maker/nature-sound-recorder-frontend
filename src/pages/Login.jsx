@@ -36,7 +36,7 @@ function Login() {
         setError('')
     
         try {
-const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/token/`, formData)
+const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/token/`, formData)
           console.log("Response:", response.data);
           
           setTokens({
