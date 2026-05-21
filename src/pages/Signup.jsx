@@ -13,7 +13,7 @@ function Signup() {
     event.preventDefault()
     try {
   const response = await axios.post(
- `${import.meta.env.VITE_BASE_URL}/signup/`,
+' https://my-nature-sound-app.onrender.com/api/signup/',
   { username, email, password }
 )
       
