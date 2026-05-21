@@ -13,7 +13,7 @@ function CreateCategory() {
 
     try {
       const token = localStorage.getItem('access_token')
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/categories/`,
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/categories/`,
         { name },
         { headers: { Authorization: `Bearer ${token}` } }
       )

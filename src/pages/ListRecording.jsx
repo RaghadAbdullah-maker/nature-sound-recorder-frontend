@@ -19,7 +19,7 @@ function ListRecording() {
       try {
         const token = localStorage.getItem('access_token')
         
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/recordings/`, {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/recordings/`, {
           headers: {
             'Authorization': `Bearer ${token}`  
           }

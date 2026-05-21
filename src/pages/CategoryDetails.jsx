@@ -13,7 +13,7 @@ function CategoryDetails() {
       try {
         const token = localStorage.getItem('access_token')
         const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/api/categories/${id}/`,
+          `${import.meta.env.VITE_BASE_URL}/categories/${id}/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -20,7 +20,7 @@ function DestinationsSlider() {
   useEffect(() => {
     const token = localStorage.getItem('access_token');
     axios
-      .get(`${import.meta.env.VITE_BASE_URL}/api/destinations/`, {
+      .get(`${import.meta.env.VITE_BASE_URL}/destinations/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

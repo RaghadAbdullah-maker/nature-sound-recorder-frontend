@@ -17,7 +17,7 @@ function AddRecord() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories/`)
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/categories/`)
         setCategories(response.data);
       } catch (err) {
         console.error("Failed to fetch categories", err);
