@@ -487,3 +487,17 @@ input {
 .edit-recording-box button.button:hover {
   background-color: #276cda;
 }
+
+
+.category-details-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-details-container .box {
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+}

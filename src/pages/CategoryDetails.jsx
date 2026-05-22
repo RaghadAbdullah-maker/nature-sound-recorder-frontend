@@ -43,7 +43,7 @@ function CategoryDetails() {
   }
 
   return (
-    <div className="container mt-6">
+    <div className="category-details-container">
       {category === null ? (
         <p className="has-text-grey">Loading category...</p>
       ) : (
