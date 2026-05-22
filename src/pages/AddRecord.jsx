@@ -42,7 +42,7 @@ function AddRecord() {
     formData.append('user', userId)
 
     try {
-      const response = await authorizedRequest("POST", "recordings/", formData)
+      const response = await authorizedRequest("POST", "/recordings/", formData)
       if (response && response.data) {
         console.log("Recording Uploaded", response.data)
         alert("Recording Uploaded Successfully")
