@@ -48,7 +48,7 @@ function CategoryDetails() {
         <p className="has-text-grey">Loading category...</p>
       ) : (
         <>
-          <div className="box">
+          <div className="category-details-box">
             <h2 className="title is-4">{category.name}</h2>
             <p className="has-text-grey-dark mb-4">
               {new Date(category.created_at).toLocaleString('en-GB', {
